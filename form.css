@@ -1,0 +1,313 @@
+/* Global styles and resets */
+/* Note: A full file would include a universal box-sizing reset and font family */
+
+/* Style for the button that opens the form */
+
+
+.open-btn12:active {
+    transform: translateY(0);
+}
+
+/* Modal overlay to darken the background */
+.modal-overlay12 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+}
+
+/* Initial modal for citizenship selection */
+.initial-modal12 {
+    position: relative;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+.modal-title12 {
+    font-size: 1.5rem;
+    color: #4a5568;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    position: relative;
+}
+
+.modal-title12 i {
+    color: #9b2c2c;
+    font-size: 1.75rem;
+}
+
+/* Radio buttons for initial modal */
+.initial-radios12 {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Button to proceed from the initial modal */
+.explore-btn12 {
+    width: 100%;
+    padding: 0.875rem 2rem;
+    background-color: #9b2c2c;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 8px rgba(155, 44, 44, 0.4);
+}
+
+.explore-btn12:hover {
+    background-color: #7c2d2d;
+    transform: translateY(-2px);
+}
+
+.explore-btn12:active {
+    transform: translateY(0);
+}
+
+
+/* Main form container styling */
+.form-container12 {
+    position: relative;
+    background-color: #ffffff;
+    padding: 3rem 2rem 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+    display: none; /* Hidden by default */
+}
+
+/* Close button styling - updated to match new design */
+
+
+/* Floating help header styling */
+.help-header12 {
+    position: absolute;
+    top: 0;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    background-image: url(img/طلب-مساعده-form.png);
+    padding: 4rem 8rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+/* Form grid for two columns */
+.form-grid12 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.column12 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Input group styling */
+.input-group12 {
+    text-align: right;
+}
+
+/* --- CHANGED: Made inputs more responsive by using max-width --- */
+.input-group12 input,
+.input-group12 select {
+    width: 100%; /* Change to 100% to fill available space */
+    max-width: 35rem; /* Add max-width to keep the intended size on larger screens */
+    height: 6vh;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: #ffffff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+/* Styling for invalid inputs */
+.is-invalid12 {
+    border-color: #e53e3e !important;
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.2) !important;
+}
+
+.input-group12 input:focus,
+.input-group12 select:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+/* File input button styling - REWRITTEN TO MATCH NEW DESIGN */
+/* --- CHANGED: Made file input wrapper more responsive by using max-width --- */
+.file-input-wrapper12 {
+    position: relative;
+    display: flex; /* Use flexbox to align the label */
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    width: 100%; /* Change to 100% to fill available space */
+    max-width: 35rem; /* Add max-width to keep the intended size on larger screens */
+    height: 6vh;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.file-label12 {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-end; /* Align content to the right */
+    cursor: pointer;
+    font-size: 1rem;
+    color: #4a5568;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.file-label12.is-invalid12 {
+    border-color: #e53e3e !important;
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.2) !important;
+}
+
+.file-placeholder12 {
+    flex-grow: 1;
+    padding: 0.75rem;
+    color: #718096;
+}
+
+.file-browse-btn12 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.5rem;
+    background-color: #f6ad55;
+    color: #ffffff;
+    font-weight: 500;
+    height: 100%;
+    transition: background-color 0.2s;
+    border-radius: 0.5rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.file-browse-btn12:hover {
+    background-color: #ed8936;
+}
+
+/* Error message styling */
+.error-message12 {
+    color: #e53e3e;
+    font-size: 0.875rem;
+    margin-top: 4px;
+    text-align: right;
+}
+
+/* Radio buttons for citizenship */
+.citizenship-radios12 {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    align-items: center;
+}
+
+.radio-label12 {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #4a5568;
+    cursor: pointer;
+}
+
+.radio-label12 input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #a0aec0;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-label12 input[type="radio"]:checked {
+    border-color: #9b2c2c;
+}
+
+.radio-label12 input[type="radio"]:checked::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #9b2c2c;
+    border-radius: 50%;
+}
+
+/* Submit button styling - REWRITTEN TO MATCH NEW DESIGN */
+.submit-btn12 {
+    width: 100%;
+    max-width: 8rem;
+    padding: 0.875rem 2rem;
+    background-color: #792535; /* Darker maroon color */
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 5px 15px rgba(140, 30, 47, 0.3); /* New, more prominent shadow */
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-left: 19rem;
+}
+
+.submit-btn12:hover {
+    background-color: #7c2d2d;
+    transform: translateY(-2px);
+}
+
+.submit-btn12:active {
+    transform: translateY(0);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 650px) {
+    .form-grid12 {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,284 @@
+ :root {
+            --maroon: #7B1F28;
+            --beige: #F9DCA8;
+            --text-dark: #542323;
+            --text-light: #f2f2f2;
+            --highlight: #F9DCA8;
+            --font-arabic: 'Cairo', sans-serif;
+            --font-tajawal: 'Tajawal', sans-serif;
+        }
+
+        /* Shared Styles */
+        body {
+            font-family: var(--font-arabic);
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* Simple main content to show the footer in context */
+
+        /* 📢 Subscription Section */
+        .subscription-box-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .subscription-box {
+            background-color: var(--beige);
+            color: var(--text-dark);
+            text-align: center;
+            padding: 50px 20px;
+            border-radius: 20px;
+            margin-bottom: -130px; /* Pulls the box up to overlap with the footer */
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            width: 90%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .subscription-box h3 {
+            font-family: var(--font-tajawal);
+            font-size: 26px;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        .subscription-box p {
+            font-size: 16px;
+            margin-top: 16px;
+            max-width: 600px;
+            margin-inline: auto;
+            color: var(--maroon);
+        }
+
+        /* Adjusted form styles for better responsiveness */
+        .subscription-form {
+            display: flex;
+            justify-content: center;
+            gap: 5px; /* Added a small gap */
+            flex-wrap: wrap;
+            margin-top: 20px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            background-color: var(--maroon);
+            border-radius: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 600px; /* Added max-width to the form itself */
+        }
+
+        /* Adjusted input width for better responsiveness */
+        .subscription-form input[type="email"] {
+            font-size: 20px;
+            color: var(--text-light);
+            background-color: var(--maroon);
+            width: 100%; /* Use full width inside the form's max-width */
+            max-width: 450px;
+            border: 0;
+            padding: 12px 15px; /* Added padding to make it look like the button */
+            box-sizing: border-box; /* Ensures padding is included in the total width */
+        }
+
+        /* Adjusted button styles for better responsiveness and hover contrast */
+        .subscription-form button {
+            font-weight: bold;
+            background-color: #fff;
+            color: var(--maroon);
+            border: none;
+            padding: 12px 30px;
+            font-size: 20px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Added color transition */
+            flex-shrink: 0; /* Prevents the button from shrinking on smaller screens */
+        }
+
+        .subscription-form button:hover {
+            background-color: var(--text-dark);
+            color: var(--text-light); /* Added text color change for contrast */
+        }
+
+        /* Thank you message styling */
+        #thank-you-message {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #thank-you-message.visible {
+            opacity: 1;
+        }
+
+        /* 🔻 Footer Section */
+        footer {
+            background-color: var(--maroon);
+            color: #fff;
+            padding-top: 150px; /* Added padding to make space for the subscription box */
+            padding-bottom: 20px;
+            width: 100%;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            max-width: 1340px;
+            width: 95%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 🪞 Logo & Info */
+        .logoimg {
+            height: 75px;
+            width: 110px;
+            object-fit: contain;
+        }
+
+        .logo-column {
+            flex: 1 1 300px;
+            min-width: 250px;
+        }
+
+        .logo-info {
+            margin-top: 10px;
+        }
+
+        .logo-text {
+            font-family: var(--font-tajawal);
+            font-weight: 700;
+            font-size: 26px;
+            line-height: 1.5;
+            color: var(--highlight);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-text a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-description {
+            font-family: var(--font-tajawal);
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--text-light);
+            display: block;
+            margin-top: 10px;
+        }
+
+        /* 🔗 Social Icons */
+        .social-icons {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons a img {
+            width: 28px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a img:hover {
+            transform: scale(1.2);
+        }
+
+        /* 📁 Link Columns */
+        .footer-links {
+            flex: 2 1 500px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .link-column h4 {
+            font-family: var(--font-tajawal);
+            font-weight: 700;
+            font-size: 16px;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+
+        .link-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .link-column li {
+            font-family: var(--font-tajawal);
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 2;
+            color: #eaeaea;
+        }
+
+        .link-column a {
+            text-decoration: none;
+            color: #EAEAEA;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .link-column a:hover {
+            color: var(--highlight);
+        }
+
+        /* 📜 Footer Bottom Text */
+        footer .copyright-text {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(249, 220, 168, 0.2); /* Corrected border style */
+            color: #fff;
+            font-family: var(--font-tajawal);
+            font-weight: 700;
+            font-size: 14px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 768px) {
+            .subscription-box {
+                width: 95%;
+                margin-bottom: -50px;
+                padding: 30px 15px;
+            }
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+            .logo-column {
+                min-width: auto;
+            }
+            .logo-text {
+                justify-content: center;
+            }
+            .social-icons {
+                justify-content: center;
+            }
+            .link-column h4, .link-column ul {
+                text-align: center;
+            }
+        }

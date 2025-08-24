@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الوان الخير</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="footer.css"/>
+  <link rel="stylesheet" href="form.css">
+  <link rel="stylesheet" href="form2.css">
+  <link rel="stylesheet" href="Volunteer-Form.css" />
+      <style>
+    .overlayy {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    .overlayy.active {
+      display: flex;
+    }
+  </style>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+   <!-- Google Font 'Inter' -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+   
+</head>
+<body>
+
+   <!-- This is the main modal overlay, which is shown by default -->
+    <div id="modal-container-first" class="first-card-modal-overlay">
+
+        <!-- This is the main card container -->
+        <div class="first-card-modal-card">
+            <button class="first-card-modal-close-btn" id="close-button-first">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="first-card-modal-content">
+                <h3 class="first-card-modal-title">شارك في صنع الفرق</h3>
+                
+                <!-- This new div holds the text and icon side-by-side -->
+                <div class="first-card-modal-text-group">
+                    <p class="first-card-modal-text">
+                        مساهمتك الصغيرة يمكن أن تكون بداية لشيء كبير. ساهم معنا اليوم!
+                    </p>
+                    <i class="fas fa-hand-holding-heart first-card-modal-icon"></i>
+                </div>
+                
+                <button class="first-card-modal-explore-btn" id="explore-button-first">
+                    استكشف فعاليتنا
+                </button>
+            </div>
+        </div>
+    </div>
+
+  <!-- Navbar will be loaded here -->
+  <div id="navbar"></div>
+
+    <main>
+
+         <!-- 🟣 Hero Section -->
+  <section class="hero">
+    <div class="overlay">
+      <h3>نصنع الخير لنرسم الأمل</h3>
+      <h1>مساعدة بعضنا البعض يمكن أن تجعل العالم أفضل</h1>
+      <h5>"الوان الخير تسعى لإحداث تغيير حقيقي في حياة المحتاجين داخل وخارج قطر، من خلال مشاريع تنموية وإنسانية مستدامة."</h5>
+      <div class="buttons">
+        <button class="donate-btn">تعرف علينا أكثر</button>
+        <button onclick="openModal()" class="donor-btn">ساهم الان</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📊 Impact Stats -->
+  <section class="statss">
+    <div class="stats">
+    <div class="stat1">
+    <div class="stat">
+      <h2>150K+</h2>
+      <img src="img/fourth0.png">
+      <span>حالة تمت مساعدتها</span>
+    </div>
+    <div class="stat">
+      <h2>15K+</h2>
+      <img src="img/fourth0.png">
+      <span>مشروع ناجح</span>
+    </div>
+    <div class="stat">
+      <h2>20M</h2>
+      <img src="img/fourth0.png">
+      <span>عدد المساهمين</span>
+    </div>
+  </div>
+    <div class="stat4">
+      <img src="img/fourth0.png">
+      <h2 class="text">هدفنا هو مساعدة الفقراء</h2>
+      <button onclick="openForm()" class="button" >اصبح متطوعا</button>
+    </div>
+    </div>
+  </section>
+
+<section class="snd2">
+  <div class="ppp">
+    <h1><img src="img/fourth0.png">تميزنا في خدمة الانسان<img src="img/fourth0.png"></h1>
+    <h2>“تبرعك يصنع فرقًا في حياة من يحتاج”</h2>
+  </div>
+  <section class="container">
+    <div class="card">
+      <h2><img src="img/تطوع.png" alt="تطوع" class="icon2">تطوع</h2>
+      <p>تقدم مبادرة الخير ألوان فرص التطوع للمتطوعين إذا كنت تتحلى بالصبر والحماس ولديك الرغبة بالانضمام في العمل الخيري فشارك معنا</p>
+      <button onclick="openForm()">سجل كمتطوع</button>
+      <div class="overlayy" id="formOverlayy"></div>
+    </div>
+        
+    <div class="card">
+      <h2><img src="img/اطلب-المساعده.png" alt="اطلب مساعدة" class="icon2">اطلب مساعدة</h2>
+      
+      <p> تترددوا في التواصل معنا، فذلك لا يُنقص من قدركم شيئًا، بل نحن هنا لأجلكم، وقد يكون وجودنا في طريقكم من تسخير الله لكم.</p>
+      <!-- Button to open the initial modal form -->
+    <button class="open-btn12" onclick="openInitialModal()">طلب مساعدة</button>
+    <!-- The overlay and main container for the forms, initially hidden -->
+    <div class="modal-overlay12" id="mainModal">
+        <!-- The initial modal to choose citizenship -->
+        <div class="initial-modal12" id="initialModalContent">
+            <button class="close-btn12" onclick="closeModal1()">&times;</button>
+            <h2 class="modal-title12">
+                اختر جنسيتك
+                <i class="fa-solid fa-handshake"></i>
+            </h2>
+            <!-- Radio buttons for citizenship choice -->
+            <div class="initial-radios12">
+                <label class="radio-label12">
+                    <input type="radio" name="initial-citizenship" value="non-qatari">
+                    غير قطري
+                </label>
+                <label class="radio-label12">
+                    <input type="radio" name="initial-citizenship" value="qatari" checked>
+                    قطري
+                </label>
+            </div>
+            
+            <!-- Button to explore based on the choice -->
+            <button class="explore-btn12" onclick="openMainForm()">استكشف فعاليتنا</button>
+        </div>
+
+        <!-- The main form container, initially empty -->
+        <div class="form-container12" id="mainFormContainer">
+            <!-- Form content from form.html will be loaded here -->
+        </div>
+    </div>
+    </div>
+     <div class="card">
+      <h2><img src="img/ساهم.png" alt="ساهم" class="icon2">ساهم</h2>
+      <p>التواصل معنا ليس عبئا أو تقليلا من شأنكم فتأكدوا بأن الله قد سخرنا لخدمتكم لكم.</p>
+     <!-- Button to open the new form -->
+    <button class="open-btn23" onclick="openModal()">ساهم الآن</button>
+
+    <!-- The overlay and container for the new form, initially hidden -->
+    <div class="modal-overlay23" id="mainModal23">
+        <!-- The new form container -->
+        <div class="form-container23" id="form2Container">
+            <!-- Form content from form2.html will be loaded here -->
+        </div>
+    </div>
+    </div>
+  </section>
+</section>
+<!-- third part-->
+  <section class="third">
+    <div class="third1">
+      <h1><img src="img/fourth0.png">من نحن<img src="img/fourth0.png"></h1>
+    </div>
+    <div class="third2">
+      <div class="third21">
+        <h2>نحن همزة الوصل بين المنفق والمستحق</h2>
+        <p>معكم بدأنا وبكم نستمر في تقديم المساعدات العينية الصحيحة لأفراد المجتمع من ذوي الدخل المحدود وتأهليلهم ليكونو قوة فعالة في المجتمع .</p>
+        <img src="img/third-1.png" class="img1001">
+        <button>اعرف المزيد</button>
+      </div>
+      <div class="third22">
+        <img src="img/third-part-img-1.png" class="thirdimg1">
+        <img src="img/third-part-img-2.png" class="thirdimg2">
+      </div>
+    </div>
+  </section>
+  <!--fourth part-->
+  <section class="fourth">
+      <div class="fourh">
+        <h1><img src="img/fourth0.png">       ارقامنا تتحدث       <img src="img/fourth0.png"></h1>
+      </div>
+      <div class="fourstats">
+        <div class="fourstat">
+          <img src="img/fourth4.png">
+          <h2>+52K</h2>
+          <span>التبرعات</span>
+        </div>
+        <div class="fourstat">
+          <img src="img/fourth3.png">
+          <h2>+632</h2>
+          <span>البعثات</span>
+        </div><div class="fourstat">
+          <img src="img/fourth2.png">
+          <h2>+457</h2>
+          <span>المتطوعين</span>
+        </div><div class="fourstat">
+          <img src="img/fourth1.png">
+          <h2>20</h2>
+          <span>الدول التي نغطيها</span>
+        </div>
+      </div>
+  </section>
+
+  <!--fifth part-->
+  <section class="fifth">
+    <h1><img src="img/fourth0.png">مشاريعنا الاحدث<img src="img/fourth0.png"></h1>
+    <div class="fifthcards">
+      <div class="fifthcard">
+        <img src="img/fifth1.png" class="fifhimg1">
+        <h2>إغاثة</h2>
+        <span>تنفذ الوان الخير حملات إغاثية شاملة ومتعددة القطاعات للاستجابة لحالات الطوارئ مثل الكوارث والأزمات، تشمل مجالات التدخل</span>
+        <img src="img/fith0.png" class="fifthimg2">
+        <button>اعرف المزيد<img src="img/fifthbutton.png"></button>
+      </div>
+    <div class="fifthcard">
+        <img src="img/fifth2.png" class="fifhimg1">
+        <h2>البناء</h2>
+        <span>تعمل الوان الخير على توفير وحدات سكنية لائقة للأسر المحتاجة بهدف تحسين ظروفهم المعيشة، مما يعزز صحتهم ورفاهيتهم العامة ويحسن جودة حياتهم كما يساعد توفير سكن للأسر المحتاجة في دعم الفئات الضعيفة والمهمشة في المجتمع، ويخفف من العبء المالي والنفسي عنهم.</span>
+        <img src="img/fith0.png" class="fifthimg2">
+        <button>اعرف المزيد<img src="img/fifthbutton.png"></button>
+      </div>
+    <div class="fifthcard">
+        <img src="img/fifth3.png" class="fifhimg1">
+        <h2>الصحة</h2>
+        <span>المشاريع الصحية التي تنفذها الوان الخير تسعى إلى تعزيز الصحة والرفاهية في المجتمعات المحتاجة، من خلال توفير خدمات الرعاية الصحية الشاملة والمتكاملة التي تلبي احتياجات السكان وتحقق التنمية المستدامة.</span>
+        <img src="img/fith0.png" class="fifthimg2">
+        <button>اعرف المزيد<img src="img/fifthbutton.png"></button>
+      </div>
+    <div class="fifthcard">
+        <img src="img/fifth4.png" class="fifhimg1">
+        <h2>التعليم</h2>
+        <span>تعمل الوان الخير على المساهمة في ضمان تعليم جيد يتسم بالإنصاف ويشمل الجميع، ويعزز فرص اكمال التعليم للطلاب من الجنسين ومن ذوي الاحتياجات الخاصة، من خلال بناء المنشآت التعليمية وصيانة وإعادة تأهيل المدارس وبناء مراكز التدريب المرافق التعليمية وتهيئة بيئة تعليمية فعالة وآمنة.</span>
+        <img src="img/fith0.png" class="fifthimg2">
+        <button>اعرف المزيد<img src="img/fifthbutton.png"></button>
+      </div>
+    </div>
+  </section>
+<!--part six-->
+  <section class="sixth">
+    <div class="sixth0">
+    <div class="sixth1">
+      <h1>برامجنا التفاعلية</h1>
+      <span>لدينا مجموعة متنوعة من الفعاليات التفاعلية والمحاضرات المتخصصة التي تتيح لك الفرصة لاكتساب المعرفة والتواصل مع الخبراء في مختلف المجالات. سواء كنت تفضل المشاركة عبر الإنترنت أو الحضور الشخصي، ستجد هنا برامج تناسب اهتماماتك وجدولك الزمني. انضم إلى ورش العمل والندوات التي نقدمها وكن جزءًا من مجتمعنا الملتزم بالتعلم والتطور المستمر.</span>
+      <p>نعمل على تنفيذ برامج إنسانية وتنموية مستدامة تهدف إلى تحسين حياة الأفراد والمجتمعات. تعرف على أبرز برامجنا التي تعكس قيمنا ورسالتنا.</p>
+      <button>اعرف المزيد<img src="img/fifthbutton.png"></button>
+    </div>
+    <div class="sixth2">
+      <img src="img/sixth1.png">
+    </div>
+    </div>
+  </section>
+  <!--part seven-->
+  <section class="seventh">
+        <div class="gallery-container">
+          <div class="seventh0">
+      <h1><img src="img/fourth0.png">لقطات من مشاريعنا<img src="img/fourth0.png"></h1>
+    </div>
+    <div class="buttons">
+    <button id="prev-btn1" class="prev-btn">&lt;</button>
+    <button id="next-btn1" class="next-btn">&gt;</button>
+  </div>
+  <div class="gallery">
+    <div class="image-wrapper">
+      <img src="img/seventh/1.jpg" alt="Description of image 1">
+    </div>
+    <div class="image-wrapper">
+      <img src="img/seventh/2.jpg" alt="Description of image 2">
+    </div>
+    <div class="image-wrapper">
+      <img src="img/seventh/3.jpg" alt="Description of image 3">
+    </div>
+    <div class="image-wrapper">
+      <img src="img/seventh/4.jpg" alt="Description of image 4">
+    </div>
+    <div class="image-wrapper">
+      <img src="img/seventh/5.jpg" alt="Description of image 5">
+    </div>
+    <div class="image-wrapper">
+      <img src="img/seventh/6.jpg" alt="Description of image 6">
+    </div>
+    <div class="image-wrapper">
+      <img src="img/seventh/7.jpg" alt="Description of image 7">
+    </div>
+    <div class="image-wrapper">
+      <img src="img/seventh/8.jpg" alt="Description of image 8">
+    </div>
+    </div>
+</div>
+  </section>
+  <!--part eigth-->
+<section class="eigth">
+    <div class="eigth0">
+        <h1>
+            <img src="img/fourth0.png" alt="Decoration Line">
+            فعاليات نساعدهم لنسعدهم
+            <img src="img/fourth0.png" alt="Decoration Line">
+        </h1>
+    </div>
+    <div class="eigth11">
+        <div class="eigth1">
+            <span>“هذه الفعاليات هي عربون محبة من المباردة الى الاسر المتعففة وتكون بشكل هدايا واختيار الاسر بحسب تقديم الطلب”</span>
+            <div class="buttons8">
+                <button id="prev-btn2" class="prev-btn2">&lt;</button>
+                <button id="next-btn2" class="next-btn2">&gt;</button>
+            </div>
+        </div>
+        <div id="gallery2" class="gallery2">
+            <!-- Example image wrapper with hover buttons -->
+            <div class="image-wrapper2">
+                <img src="https://placehold.co/400x450/ccc/fff?text=Image+1" alt="Description of image 1">
+                <span class="image-caption">برامج الخير</span>
+                <span class="image-date">01 مارس</span>
+                <div class="image-overlay">
+                    <button onclick="openModal"><i class="fa-solid fa-hand-holding-heart"></i> ساهم الان</button>
+                    <button><i class="fa-solid fa-external-link-alt"></i> تفاصيل</button>
+                </div>
+            </div>
+            <div class="image-wrapper2">
+                <img src="https://placehold.co/400x450/ccc/fff?text=Image+2" alt="Description of image 2">
+                <span class="image-caption">إفطار الخير</span>
+                <span class="image-date">01 يناير</span>
+                <div class="image-overlay">
+                    <button onclick="openModal"><i class="fa-solid fa-hand-holding-heart"></i> ساهم الان</button>
+                    <button><i class="fa-solid fa-external-link-alt"></i> تفاصيل</button>
+                </div>
+            </div>
+            <div class="image-wrapper2">
+                <img src="https://placehold.co/400x450/ccc/fff?text=Image+3" alt="Description of image 3">
+                <span class="image-caption">عيد الخير</span>
+                <span class="image-date">01 فبراير</span>
+                <div class="image-overlay">
+                    <button onclick="openModal"><i class="fa-solid fa-hand-holding-heart"></i> ساهم الان</button>
+                    <button><i class="fa-solid fa-external-link-alt"></i> تفاصيل</button>
+                </div>
+            </div>
+            <div class="image-wrapper2">
+                <img src="https://placehold.co/400x450/ccc/fff?text=Image+4" alt="Description of image 4">
+                <span class="image-caption">حملة الشتاء</span>
+                <span class="image-date">01 ديسمبر</span>
+                <div class="image-overlay">
+                    <button onclick="openModal"><i class="fa-solid fa-hand-holding-heart"></i> ساهم الان</button>
+                    <button><i class="fa-solid fa-external-link-alt"></i> تفاصيل</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  <!--part nine-->
+  <section class="nineth">
+    <div class="nineth0">
+      <h1><img src="img/fourth0.png">اخر الاخبار<img src="img/fourth0.png"></h1>
+    </div>
+    <div class="nineth1">
+    <div class="nineth111">
+      <div class="nineth11">
+        <img src="img/nineth1.png">
+        <h3><img src="img/Calendar.png">الثلاثاء, 07 يناير, 2025</h3>
+        <span>"مركز اتزان للتدريب يعلن عن نجاح تعاونه مع الخير ألوان الخيرية ويستعد لتوسيع نطاق الشراكة"</span>
+      </div>
+      <div class="nineth11">
+        <img src="img/nineth2.png">
+        <h3><img src="img/Calendar.png">الثلاثاء, 07 يناير, 2025</h3>
+        <span>"نور الشتاء: حملة 'كسوة الخير' تحمل الدفء والأمل لـ 70 أسرة في أوقات البرد القارس"</span>
+      </div>
+    </div>
+      <img src="img/nineth3.png" alt="img">
+      <div class="nineth111">
+      <div class="nineth11">
+        <img src="img/nineth4.png">
+        <h3><img src="img/Calendar.png">الثلاثاء, 07 يناير, 2025</h3>
+        <span>“المسؤولة الأكاديمية في 'الخير ألوان' تسلط الضوء في مقابلة حصرية: على دور الجانب الأكاديمي في تطوير المتطوعات وتحقيق النجاح في سلسلة من الورش الفعّالة"</span>
+      </div>
+      <div class="nineth11">
+        <img src="img/nineth5.png">
+        <h3><img src="img/Calendar.png">الثلاثاء, 07 يناير, 2025</h3>
+        <span>ترشيح مبادرة "الخير ألوان" من بين أفضل عشر مبادرات قطرية لعام 2021 في مهرجان نجاح قطري</span>
+      </div>
+      </div>
+    </div>
+  </section>
+  <!--part ten-->
+  <section class="tenth">
+    <div class="tenth0">
+      <h1><img src="img/fourth0.png">قصصنا من قلب الميدان<img src="img/fourth0.png"></h1>
+      <h2><span>"</span>من هنا تبدأ الحكايات... مشاركون صنعوا الأثر، وإنجازات تحققت، وآراء تروي تجربة العطاء استلهم من رحلتنا في ميادين الخير.<span>"</span></h2>
+    </div>
+    <div class="tenth1">
+        <div class="container mx-auto">
+        <!-- Testimonial Cards Container -->
+        <div id="card-container" class="card-container">
+            <!-- Testimonial Card 1 -->
+            <div class="testimonial-card">
+                <div class="card-header">
+                    <img src="img/tenthpofile/1.jpg" alt="Profile 1" class="profile-image">                
+                  </div>
+                <p class="testimonial-text">
+                    "إنها أداة رائعة حقًا، لقد غيرت طريقة عملي بالكامل. أصبحت المهام اليومية أكثر سهولة وفعالية. أوصي بها بشدة لكل من يريد تحسين إنتاجيته."
+                </p>
+                <div class="card-footer">
+                    <p class="user-name">محمد علي</p>
+                </div>
+            </div>
+
+            <!-- Testimonial Card 2 -->
+            <div class="testimonial-card">
+                <div class="card-header">
+                    <img src="img/tenthpofile/2.jpg" alt="Profile 2" class="profile-image">
+                </div>
+                <p class="testimonial-text">
+                    "تجربة رائعة وممتعة. الواجهة سهلة الاستخدام والخدمة ممتازة. كان فريق الدعم متعاونًا جدًا وأجاب على جميع استفساراتي بسرعة. شكراً لكم!"
+                </p>
+                <div class="card-footer">
+                    <p class="user-name">فاطمة الزهراء</p>
+                </div>
+            </div>
+
+            <!-- Testimonial Card 3 -->
+            <div class="testimonial-card">
+                <div class="card-header">
+                    <img src="img/tenthpofile/3.jpg" alt="Profile 3" class="profile-image">
+                </div>
+                <p class="testimonial-text">
+                    "منذ أن بدأت باستخدام هذه المنصة، لاحظت فرقًا كبيرًا في مستوى تنظيم أعمالي. لقد تجاوزت توقعاتي بكثير وأنا متحمسة للمزيد."
+                </p>
+                <div class="card-footer">
+                    <p class="user-name">أحمد منصور</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Navigation Buttons -->
+        <div class="carousel-nav">
+            <button id="next-btn" class="nav-button">
+                <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+            <button id="prev-btn" class="nav-button">
+                <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    </div>
+  </section>
+    </main>
+
+  <div id="footerContainer"></div>
+
+  <script>
+        // Start of the IIFE to prevent global pollution
+        (function() {
+            // Get references to the modal and buttons
+            const modalContainer = document.getElementById('modal-container-first');
+            const closeButton = document.getElementById('close-button-first');
+            const exploreButton = document.getElementById('explore-button-first');
+
+            // Function to hide the modal
+            function hideModal() {
+                modalContainer.classList.add('first-card-modal-hidden');
+            }
+
+            // Attach event listeners to the buttons to hide the modal when clicked
+            closeButton.addEventListener('click', hideModal);
+            exploreButton.addEventListener('click', hideModal);
+
+        })(); // End of the IIFE
+    </script>
+
+
+  <script>
+    // Load the navbar from navbar.html into the div
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+  </script>
+  <script>
+    // search box
+    function toggleSearch() {
+      const box = document.getElementById("searchBox");
+       if (box.style.display === "none") {
+        box.style.display = "inline-block";
+        box.focus();
+      } else {
+        box.style.display = "none";
+      }
+    }
+  </script>
+  <script>
+    // footer
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footerContainer').innerHTML = data;
+      });
+  </script>
+   <script>
+    function openForm() {
+      const overlay = document.getElementById("formOverlayy");
+
+      fetch("Volunteer-Form.html")
+        .then(res => res.text())
+        .then(html => {
+          overlay.innerHTML = html;
+          overlay.classList.add("active");
+
+          // Optional: close button logic
+          const closeBtn = overlay.querySelector(".close-btn");
+          if (closeBtn) {
+            closeBtn.addEventListener("click", () => {
+              overlay.classList.remove("active");
+              overlay.innerHTML = "";
+            });
+          }
+        });
+    }
+  </script>
+  <script>
+    //first form
+  const form = document.querySelector("form");
+  const submitBtn = document.querySelector(".submit-btn12");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Check if form is valid
+    if (!form.checkValidity()) {
+      form.reportValidity(); // Show browser validation
+      return;
+    }
+
+    // Show success popup
+    showPopup("تم إرسال النموذج بنجاح! شكراً لمساهمتك ❤️");
+    form.reset(); // Optional: reset form after submission
+  });
+
+  function showPopup(message) {
+    const popup = document.createElement("div");
+    popup.className = "popup";
+    popup.innerText = message;
+    document.body.appendChild(popup);
+
+    setTimeout(() => {
+      popup.classList.add("visible");
+    }, 10);
+
+    setTimeout(() => {
+      popup.classList.remove("visible");
+      setTimeout(() => popup.remove(), 500);
+    }, 3000);
+  }
+</script>
+
+ <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get references to all the image wrappers and buttons
+            const gallery = document.querySelector('.gallery');
+            const images = document.querySelectorAll('.image-wrapper');
+            const prevBtn = document.getElementById('prev-btn1');
+            const nextBtn = document.getElementById('next-btn1');
+
+            // Set the initial active image to the middle of the gallery
+            // Math.floor ensures we get a whole number index
+            let currentIndex = Math.floor(images.length / 2);
+
+            // Function to update the gallery view
+            function updateGallery() {
+                // Remove the 'active' class from all images first
+                images.forEach(img => img.classList.remove('active'));
+
+                // Add the 'active' class to the current image
+                images[currentIndex].classList.add('active');
+
+                // Scroll the current image into the center of the view with a smooth animation
+                images[currentIndex].scrollIntoView({
+                    inline: 'center',
+                    behavior: 'smooth'
+                });
+            }
+
+            // Set the initial state when the page loads
+            updateGallery();
+
+            // Add a click event listener to the "next" button
+            nextBtn.addEventListener('click', () => {
+                // Increment the index, but wrap around to the beginning if we're at the end
+                currentIndex = (currentIndex + 1) % images.length;
+                updateGallery();
+            });
+
+            // Add a click event listener to the "previous" button
+            prevBtn.addEventListener('click', () => {
+                // Decrement the index, but wrap around to the end if we're at the beginning
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateGallery();
+            });
+            
+            // Optional: Add click listener to images themselves to make them the active one
+            images.forEach((image, index) => {
+                image.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateGallery();
+                });
+            });
+        });
+    </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const gallery = document.getElementById('gallery2');
+        const nextButton = document.getElementById('next-btn2');
+        const prevButton = document.getElementById('prev-btn2');
+
+        const scrollAmount = 450; // Adjust this value to control the scroll distance
+
+        nextButton.addEventListener('click', () => {
+            gallery.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        prevButton.addEventListener('click', () => {
+            gallery.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+ <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cardContainer = document.getElementById('card-container');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+             // Scroll amount is the width of one card plus the gap
+            const cardWidth = cardContainer.querySelector('.testimonial-card').offsetWidth;
+            const style = window.getComputedStyle(cardContainer );
+            const gap = parseFloat(style.getPropertyValue('gap')); // Get the gap from CSS
+        
+           prevBtn.addEventListener('click', () => {
+               cardContainer.scrollLeft -= (cardWidth + gap);
+               });
+                nextBtn.addEventListener('click', () => {
+                cardContainer.scrollLeft += (cardWidth + gap);
+            });
+            
+            // Make the scroll behavior smoother on browsers that don't support scroll-smooth
+           
+        });
+  </script>
+
+  <script>
+        // Function to show the initial modal and hide the nav bar
+        function openInitialModal() {
+            const navbar = document.getElementById("navbar");
+            if (navbar) {
+                navbar.style.display = "none";
+            }
+            document.getElementById("mainModal").style.display = "flex";
+            document.getElementById("initialModalContent").style.display = "block";
+            document.getElementById("mainFormContainer").style.display = "none";
+        }
+
+        // Function to close the entire modal and show the nav bar
+        function closeModal1() {
+            document.getElementById("initialModalContent").style.display = "none";
+            document.getElementById("mainFormContainer").style.display = "none";
+            document.getElementById("mainModal").style.display = "none";
+            const navbar = document.getElementById("navbar");
+            if (navbar) {
+                navbar.style.display = "block";
+                
+            }
+        }
+
+        // Function to toggle between the Qatari and Non-Qatari forms
+        function toggleForm() {
+            const mainFormContainer = document.getElementById('mainFormContainer');
+            const qatariForm = mainFormContainer.querySelector('#qatari-form');
+            const nonQatariForm = mainFormContainer.querySelector('#non-qatari-form');
+            const isQatari = mainFormContainer.querySelector('input[name="citizenship"]:checked')?.value === 'qatari';
+
+            if (qatariForm && nonQatariForm) {
+                if (isQatari) {
+                    qatariForm.style.display = 'block';
+                    nonQatariForm.style.display = 'none';
+                } else {
+                    qatariForm.style.display = 'none';
+                    nonQatariForm.style.display = 'block';
+                }
+            }
+        }
+
+        // Function to validate a single form
+        function validateForm(form) {
+            let isValid = true;
+            const requiredInputs = form.querySelectorAll('[required]');
+
+            requiredInputs.forEach(input => {
+                const errorElement = document.getElementById(input.id + '-error');
+                
+                // Clear previous errors
+                input.classList.remove('is-invalid12');
+                if (errorElement) {
+                    errorElement.textContent = '';
+                }
+
+                let isInputValid = false;
+
+                if (input.type === 'file') {
+                    if (input.files.length > 0) {
+                        isInputValid = true;
+                    }
+                } else if (input.tagName === 'SELECT') {
+                    if (input.value !== '') {
+                        isInputValid = true;
+                    }
+                } else {
+                    if (input.value.trim() !== '') {
+                        isInputValid = true;
+                    }
+                }
+
+                if (!isInputValid) {
+                    isValid = false;
+                    input.classList.add('is-invalid12');
+                    if (errorElement) {
+                        errorElement.textContent = 'هذا الحقل مطلوب';
+                    }
+                }
+            });
+            return isValid;
+        }
+
+        // Function to attach event listeners to the loaded forms
+        function attachFormListeners() {
+            const qatariForm = document.getElementById('qatari-form');
+            const nonQatariForm = document.getElementById('non-qatari-form');
+
+            if (qatariForm) {
+                qatariForm.addEventListener('submit', (event) => {
+                    if (!validateForm(qatariForm)) {
+                        event.preventDefault();
+                    } else {
+                        alert('Form Qatari submitted successfully!');
+                    }
+                });
+            }
+
+            if (nonQatariForm) {
+                nonQatariForm.addEventListener('submit', (event) => {
+                    if (!validateForm(nonQatariForm)) {
+                        event.preventDefault();
+                    } else {
+                        alert('Form Non-Qatari submitted successfully!');
+                    }
+                });
+            }
+
+            // Attach listener to the citizenship radio buttons to toggle forms
+            const citizenshipRadios = document.querySelectorAll('input[name="citizenship"]');
+            citizenshipRadios.forEach(radio => {
+                radio.addEventListener('change', toggleForm);
+            });
+        }
+
+        // Function to open the correct main form based on the initial radio button choice
+        async function openMainForm() {
+            // Hide initial modal content
+            document.getElementById("initialModalContent").style.display = "none";
+
+            // Show the main form container and a loading indicator
+            const mainFormContainer = document.getElementById("mainFormContainer");
+            mainFormContainer.style.display = "block";
+            mainFormContainer.innerHTML = '<div style="text-align: center; padding: 2rem;">جاري التحميل...</div>';
+
+            try {
+                // Fetch the form content from form.html
+                const response = await fetch('form.html');
+                if (!response.ok) {
+                    throw new Error('Failed to load form.html');
+                }
+                const formHtml = await response.text();
+
+                // Insert the fetched content into the container
+                mainFormContainer.innerHTML = formHtml;
+
+                // Determine the initial citizenship choice
+                const isQatari = document.querySelector('input[name="initial-citizenship"]:checked').value === 'qatari';
+
+                // Set the correct radio button in the new form
+                const qatariRadio = mainFormContainer.querySelector('input[name="citizenship"][value="qatari"]');
+                const nonQatariRadio = mainFormContainer.querySelector('input[name="citizenship"][value="non-qatari"]');
+
+                if (isQatari) {
+                    qatariRadio.checked = true;
+                } else {
+                    nonQatariRadio.checked = true;
+                }
+
+                // Call the toggle function to show the correct form
+                toggleForm();
+                
+                // Attach the validation listeners after the content is loaded
+                attachFormListeners();
+
+            } catch (error) {
+                console.error('Error loading the form:', error);
+                mainFormContainer.innerHTML = '<div style="color: red; text-align: center; padding: 2rem;">حدث خطأ أثناء تحميل النموذج.</div>';
+            }
+        }
+    </script> 
+    <script>
+        // Function to open the new form (form2.html)
+        async function openModal() {
+            const navbar = document.getElementById("navbar");
+            if (navbar) {
+                navbar.style.display = "none";
+            }
+            document.getElementById("mainModal23").style.display = "flex";
+            
+            const form2Container = document.getElementById("form2Container");
+            form2Container.style.display = "block";
+            form2Container.innerHTML = '<div style="text-align: center; padding: 2rem;">جاري التحميل...</div>';
+
+            try {
+                const response = await fetch('form2.html');
+                if (!response.ok) {
+                    throw new Error('Failed to load form2.html');
+                }
+                const formHtml = await response.text();
+                form2Container.innerHTML = formHtml;
+                attachForm2Listeners();
+
+            } catch (error) {
+                console.error('Error loading the form:', error);
+                form2Container.innerHTML = '<div style="color: red; text-align: center; padding: 2rem;">حدث خطأ أثناء تحميل النموذج.</div>';
+            }
+        }
+        
+        // Function to close the entire modal and show the nav bar
+        function closeModal() {
+            document.getElementById("mainModal23").style.display = "none";
+            const navbar = document.getElementById("navbar");
+            if (navbar) {
+                navbar.style.display = "block";
+            }
+        }
+        
+        // Function to validate the new form
+        function validateForm2(form) {
+            let isValid = true;
+            const requiredInputs = form.querySelectorAll('[required]');
+
+            requiredInputs.forEach(input => {
+                const errorElement = document.getElementById(input.id + '-error23');
+                
+                input.classList.remove('is-invalid23');
+                if (errorElement) {
+                    errorElement.textContent = '';
+                }
+
+                let isInputValid = false;
+
+                if (input.type === 'file') {
+                    if (input.files.length > 0) {
+                        isInputValid = true;
+                    }
+                 } else if (input.tagName === 'SELECT') {
+                    if (input.value !== '') {
+                        isInputValid = true;
+                    }
+                } else {
+                    if (input.value.trim() !== '') {
+                        isInputValid = true;
+                    }
+                }
+
+                if (!isInputValid) {
+                    isValid = false;
+                    input.classList.add('is-invalid23');
+                    if (errorElement) {
+                        errorElement.textContent = 'هذا الحقل مطلوب';
+                    }
+                }
+            });
+            return isValid;
+        }
+
+        // Function to attach event listeners to the new form
+        function attachForm2Listeners() {
+            const form2 = document.getElementById('new-form23');
+            if (form2) {
+                form2.addEventListener('submit', (event) => {
+                    if (!validateForm2(form2)) {
+                        event.preventDefault();
+                    } else {
+                        // For demonstration, we'll just show an alert
+                        alert('Form submitted successfully!');
+                        // In a real application, you would send the form data here
+                    }
+                });
+            }
+        }
+    </script>
+
+    <script>
+    // Handles the form submission using the Gemini API
+    async function handleSubscription(event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        const emailInput = document.getElementById('subscriberEmail');
+        const thankYouMessageDiv = document.getElementById('thank-you-message');
+        const subscribeButton = document.getElementById('subscribeButton');
+
+        // Basic validation
+        if (!emailInput.checkValidity()) {
+            emailInput.reportValidity();
+            return;
+        }
+
+        // Show a loading message and disable the button
+        thankYouMessageDiv.textContent = 'جاري إعداد رسالة خاصة لك...';
+        thankYouMessageDiv.classList.add('visible');
+        subscribeButton.disabled = true;
+
+        try {
+            // Define the prompt for the LLM
+            const prompt = "Generate a very short, positive, and encouraging thank you message in Arabic for a person who just subscribed to a charity's newsletter. Focus on the impact of their support.";
+
+            // Construct the payload for the Gemini API call
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+            const payload = {
+                contents: chatHistory,
+                generationConfig: {
+                    temperature: 0.7, // Adjust the creativity
+                },
+            };
+
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                throw new Error(`API call failed with status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            
+            // Extract the generated text from the API response
+            const generatedText = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+            if (generatedText) {
+                // Update the UI with the personalized message
+                thankYouMessageDiv.textContent = generatedText;
+            } else {
+                // Fallback message if the response is empty
+                thankYouMessageDiv.textContent = 'شكراً لاشتراكك! دعمك يعني الكثير.';
+            }
+
+        } catch (error) {
+            console.error('Error generating thank you message:', error);
+            // Display a user-friendly error message
+            thankYouMessageDiv.textContent = 'حدث خطأ. شكراً لاشتراكك، على أي حال!';
+        } finally {
+            // Re-enable the button and clear the email field after a delay
+            setTimeout(() => {
+                subscribeButton.disabled = false;
+                emailInput.value = '';
+            }, 3000);
+        }
+    }
+  </script>
+   
+</body>
+
+</html>

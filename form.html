@@ -1,0 +1,181 @@
+<button class="close-btn12" onclick="closeModal()">&times;</button>
+
+<!-- Floating header is now inside the main form container -->
+<div class="help-header12">
+</div>
+
+<!-- Radio buttons for citizenship to toggle the forms -->
+<div class="citizenship-radios12">
+    <label class="radio-label12">
+        <input type="radio" name="citizenship" value="non-qatari" onchange="toggleForm()">
+        غير قطري
+    </label>
+    <label class="radio-label12">
+        <input type="radio" name="citizenship" value="qatari" checked onchange="toggleForm()">
+        قطري
+    </label>
+</div>
+
+<!-- Form for Qatari citizens -->
+<form id="qatari-form" class="hidden12" novalidate>
+    <div class="form-grid12">
+        <!-- Left column inputs -->
+        <div class="column12">
+            <div class="input-group12">
+                <div class="file-input-wrapper12">
+                    <input type="file" id="file_qatari" name="qatari-id-photo" hidden required>
+                    <label for="file_qatari" class="file-label12">
+                        <span class="file-placeholder12">صورة الهوية القطرية</span>
+                        <span class="file-browse-btn12">اختيار ملف</span>
+                    </label>
+                </div>
+                <div class="error-message12" id="file-qatari-error"></div>
+            </div>
+            <div class="input-group12">
+                <input type="tel" id="phone_qatari" name="phone_qatari" placeholder="رقم الهاتف" required>
+                <div class="error-message12" id="phone-qatari-error"></div>
+            </div>
+            <div class="input-group12">
+                <select id="gender_qatari" name="gender_qatari" required>
+                    <option value="">الجنس</option>
+                    <option value="male">ذكر</option>
+                    <option value="female">انثى</option>
+                </select>
+                <div class="error-message12" id="gender-qatari-error"></div>
+            </div>
+            <div class="input-group12">
+                <input type="text" id="area_qatari" name="area_qatari" placeholder="المنطقة" required>
+                <div class="error-message12" id="area-qatari-error"></div>
+            </div>
+            <div class="input-group12">
+                <select id="status_qatari" name="status_qatari" required>
+                    <option value="">اختر الحالة</option>
+                    <option value="single">اعزب</option>
+                    <option value="married">متزوج</option>
+                </select>
+                <div class="error-message12" id="status-qatari-error"></div>
+            </div>
+        </div>
+
+        <!-- Right column inputs -->
+        <div class="column12">
+            <div class="input-group12">
+                <input type="text" id="name_qatari" name="name_qatari" placeholder="الاسم" required>
+                <div class="error-message12" id="name-qatari-error"></div>
+            </div>
+            <div class="input-group12">
+                <input type="text" id="id-number_qatari" name="id-number_qatari" placeholder="رقم الهوية القطرية" required>
+                <div class="error-message12" id="id-number-qatari-error"></div>
+            </div>
+            <div class="input-group12">
+                <input type="email" id="email_qatari" name="email_qatari" placeholder="الايميل" required>
+                <div class="error-message12" id="email-qatari-error"></div>
+            </div>
+            <div class="input-group12">
+                <input type="text" id="profession_qatari" name="profession_qatari" placeholder="المهنة" required>
+                <div class="error-message12" id="profession-qatari-error"></div>
+            </div>
+            <div class="input-group12">
+                <input type="number" id="family-members_qatari" name="family-members_qatari" placeholder="عدد افراد الاسرة" required>
+                <div class="error-message12" id="family-members-qatari-error"></div>
+            </div>
+            <div class="input-group12">
+                <select id="project_qatari" name="project_qatari" required>
+                    <option value="">اختر المشروع</option>
+                    <option value="project1">مشروع 1</option>
+                    <option value="project2">مشروع 2</option>
+                </select>
+                <div class="error-message12" id="project-qatari-error"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Submit button for Qatari form -->
+    <button type="submit" class="submit-btn12">
+        ارسال
+        <i class="fa-solid fa-paper-plane"></i>
+    </button>
+</form>
+
+<!-- Form for Non-Qatari citizens -->
+<form id="non-qatari-form" class="hidden12" novalidate>
+    <div class="form-grid12">
+        <!-- Left column inputs (Non-Qatari) -->
+        <div class="column12">
+            <div class="input-group12">
+                <div class="file-input-wrapper12">
+                    <input type="file" id="file_non_qatari" name="residency-photo" hidden required>
+                    <label for="file_non_qatari" class="file-label12">
+                        <span class="file-placeholder12">صورة الاقامة</span>
+                        <span class="file-browse-btn12">اختيار ملف</span>
+                    </label>
+                </div>
+                <div class="error-message12" id="file-non-qatari-error"></div>
+            </div>
+            <div class="input-group12">
+                <input type="tel" id="phone_non_qatari" name="phone_non_qatari" placeholder="رقم الهاتف" required>
+                <div class="error-message12" id="phone-non-qatari-error"></div>
+            </div>
+            <div class="input-group12">
+                <select id="gender_non_qatari" name="gender_non_qatari" required>
+                    <option value="">الجنس</option>
+                    <option value="male">ذكر</option>
+                    <option value="female">انثى</option>
+                </select>
+                <div class="error-message12" id="gender-non-qatari-error"></div>
+            </div>
+            <div class="input-group12">
+                <input type="text" id="nationality_non_qatari" name="nationality_non_qatari" placeholder="الجنسية" required>
+                <div class="error-message12" id="nationality-non-qatari-error"></div>
+            </div>
+            <div class="input-group12">
+                <input type="email" id="email_non_qatari" name="email_non_qatari" placeholder="الايميل" required>
+                <div class="error-message12" id="email-non-qatari-error"></div>
+            </div>
+            <div class="input-group12">
+                <select id="project_non_qatari" name="project_non_qatari" required>
+                    <option value="">اختر المشروع</option>
+                    <option value="project1">مشروع 1</option>
+                    <option value="project2">مشروع 2</option>
+                </select>
+                <div class="error-message12" id="project-non-qatari-error"></div>
+            </div>
+        </div>
+
+        <!-- Right column inputs (Non-Qatari) -->
+        <div class="column12">
+            <div class="input-group12">
+                <input type="text" id="name_non_qatari" name="name_non_qatari" placeholder="الاسم" required>
+                <div class="error-message12" id="name-non-qatari-error"></div>
+            </div>
+            <div class="input-group12">
+                <input type="text" id="residency-number_non_qatari" name="residency-number_non_qatari" placeholder="رقم الاقامة" required>
+                <div class="error-message12" id="residency-number-non-qatari-error"></div>
+            </div>
+            <div class="input-group12">
+                <input type="text" id="sponsor-name_non_qatari" name="sponsor-name_non_qatari" placeholder="اسم الكفيل" required>
+                <div class="error-message12" id="sponsor-name-non-qatari-error"></div>
+            </div>
+            <div class="input-group12">
+                <input type="text" id="area_non_qatari" name="area_non_qatari" placeholder="المنطقة" required>
+                <div class="error-message12" id="area-non-qatari-error"></div>
+            </div>
+            <div class="input-group12">
+                <input type="number" id="family-members_non_qatari" name="family-members_non_qatari" placeholder="عدد افراد الاسرة" required>
+                <div class="error-message12" id="family-members-non-qatari-error"></div>
+            </div>
+            <div class="input-group12">
+                <select id="campaign_non_qatari" name="campaign_non_qatari" required>
+                    <option value="">اختر الحملة</option>
+                    <option value="campaign1">حملة 1</option>
+                    <option value="campaign2">حملة 2</option>
+                </select>
+                <div class="error-message12" id="campaign-non-qatari-error"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Submit button for Non-Qatari form -->
+    <button type="submit" class="submit-btn12">
+        ارسال
+        <i class="fa-solid fa-paper-plane"></i>
+    </button>
+</form>

@@ -1,0 +1,69 @@
+<button class="close-btn23" onclick="closeModal()">&times;</button>
+
+<!-- Floating header with new design -->
+<div class="help-header23">
+   
+</div>
+
+<form id="new-form23" novalidate>
+    <div class="form-grid23">
+        <!-- Right column inputs -->
+        <div class="column23">
+            <div class="input-group23">
+                <input type="text" id="name23" name="name23" placeholder="الاسم" required>
+                <div class="error-message23" id="name23-error23"></div>
+            </div>
+            <div class="input-group23">
+                <input type="email" id="email23" name="email23" placeholder="الايميل" required>
+                <div class="error-message23" id="email23-error23"></div>
+            </div>
+            <div class="input-group23">
+                <select id="project23" name="project23" required>
+                    <option value="">اختر المشروع</option>
+                    <option value="project1">مشروع 1</option>
+                    <option value="project2">مشروع 2</option>
+                </select>
+                <div class="error-message23" id="project23-error23"></div>
+            </div>
+            <div class="input-group23">
+                <div class="file-input-wrapper23">
+                    <input type="file" id="file23" name="file23" hidden required>
+                    <label for="file23" class="file-label23">
+                        <span class="file-placeholder23">صورة المساهم به</span>
+                        <span class="file-browse-btn23">اختيار ملف</span>
+                    </label>
+                </div>
+                <div class="error-message23" id="file23-error23"></div>
+            </div>
+        </div>
+
+        <!-- Left column inputs -->
+        <div class="column23">
+            <div class="input-group23">
+                <input type="tel" id="phone23" name="phone23" placeholder="رقم الهاتف" required>
+                <div class="error-message23" id="phone23-error23"></div>
+            </div>
+            <div class="input-group23">
+                <input type="text" id="area23" name="area23" placeholder="المنطقة" required>
+                <div class="error-message23" id="area23-error23"></div>
+            </div>
+            <div class="input-group23">
+                <select id="campaign23" name="campaign23" required>
+                    <option value="">اختر الحملة</option>
+                    <option value="campaign1">حملة 1</option>
+                    <option value="campaign2">حملة 2</option>
+                </select>
+                <div class="error-message23" id="campaign23-error23"></div>
+            </div>
+            <div class="input-group23">
+                <textarea id="description23" name="description23" placeholder="وصف المساهم به" required></textarea>
+                <div class="error-message23" id="description23-error23"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Submit button for new form -->
+    <button type="submit" class="submit-btn23">
+        ارسال
+        <i class="fa-solid fa-paper-plane"></i>
+    </button>
+</form>
